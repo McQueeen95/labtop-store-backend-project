@@ -25,18 +25,18 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// app.all('*', (req, res) => {
-//   res.status(404).json({ message: 'Route not found' });
-// });
+app.all('*', (req, res) => {
+  res.status(404).json({ message: 'Route not found' });
+});
 
-app.use('/user', userRoutes)
-app.use('/auth', authRoutes)
-app.use('/laptop', laptopRoutes)
-app.use('/category', categoryRoutes)
-app.use('/brand', brandRoutes)
-app.use('/rate', rateRoutes)
-app.use('/cart', cartRoutes)
-app.use('/cartItem', cartItemRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/laptop', laptopRoutes)
+app.use('/api/category', categoryRoutes)
+app.use('/api/brand', brandRoutes)
+app.use('/api/rate', rateRoutes)
+app.use('/api/cart', cartRoutes)
+app.use('/api/cartItem', cartItemRoutes)
 
 connectDB();
 
