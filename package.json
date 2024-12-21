@@ -4,8 +4,8 @@
   "description": "Backend for the Laptop Shop project, built using Node.js, Express.js, and MongoDB. This repository provides RESTful APIs for managing products, users, and orders, along with authentication and secure access using JWT.",
   "main": "app.js",
   "scripts": {
-    "start": "node api/app.js",
-    "dev": "nodemon api/app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
