@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.all('*', (req, res) => {
-  res.status(404).json({ message: 'Route not found' });
-});
+// app.all('*', (req, res) => {
+//   res.status(404).json({ message: 'Route not found' });
+// });
 
 app.use('/user', userRoutes)
 app.use('/auth', authRoutes)
