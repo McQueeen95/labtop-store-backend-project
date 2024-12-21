@@ -5,12 +5,5 @@
       "source": "/(.*)",
       "destination": "/api"
     }
-  ],
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["dist/**"] }
-    }
   ]
 }
