@@ -39,5 +39,3 @@ app.use('/cart', cartRoutes)
 app.use('/cartItem', cartItemRoutes)
 
 connectDB();
-
-module.exports = app
