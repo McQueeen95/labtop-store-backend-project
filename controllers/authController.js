@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const createToken = require('../utils/createToken');
 const User = require('../models/User');
 const blacklist = require('../middleware/blackList')
+const { DEFAULT_USER_PHOTO } = require('../config/constants');
 
 
 
@@ -12,7 +13,8 @@ const register = async (req,res) => {
       return res.status(400).json({message:"User already exists"});
     }
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const user = await User.create({ ...req.body, password: hashedPassword });
+    const photo = req.file ? req.file.path : DEFAULT_USER_PHOTO;
+    const user = await User.create({ ...req.body, password: hashedPassword , photo});
     const token = createToken(user._id);
     res.status(201).json({ message: 'User Registered successfully', data: user, token });
   }catch(error){
